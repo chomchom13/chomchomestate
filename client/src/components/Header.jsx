@@ -12,7 +12,7 @@ export default function Header() {
     <header className='bg-slate-300 shadow-md'>
         {/*justify-between -> adds a space between tags( if there are multiple tags )*/}
         {/*items-center -> vertically centers the tags inside div*/}
-        <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
+        <div className='flex justify-between items-center max-w-7xl mx-auto p-3'>
             <Link to='/'>
                 <h1 className='font-bold text-lg sm:text-xl flex flex-wrap'>
                     {/*span is used when we want to apply style to specific texts inside a block of many texts*/}
