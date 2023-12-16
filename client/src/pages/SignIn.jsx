@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { signInStart,signInFailure,signInSuccess } from '../redux/user/userSlice'; // reducers
+import OAuth from '../components/OAuth';
 
 export default function SignIp() {
   var [formData, setFormData] = useState({}); // as the value of this is going to change , we assign this as 'let'/'var' and not 'const'
@@ -47,6 +48,8 @@ export default function SignIp() {
         <input type="password" placeholder='password' className='border p-3 rounded-lg' id='password' onChange={handleChange}/>
         {/* disabled = {loading} -> when loading is true, set the disabled to true! */}
         <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>{loading? 'Loading...':'Sign In'} </button>
+        {/* if we click this OAuth button it will submit the form as well as it is inside the form tag ( button by default type is submit ), so change the type of this OAuth to button */}
+        <OAuth /> 
       </form>
       <div className='flex gap-2 mt-5'>
         {/* In Dont , don't add (') as that is going to cause problem in the production later */}
