@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import userRouter from './routes/user.route.js'
 import authRouter from './routes/auth.route.js'
+import cookieParser from 'cookie-parser'
 dotenv.config();
 
 mongoose.connect(process.env.mongo_uri).then(()=>{
@@ -13,10 +14,10 @@ mongoose.connect(process.env.mongo_uri).then(()=>{
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 app.use('/server/user', userRouter);
 app.use('/server/auth', authRouter);
-
 // middleware for handling errors // next means the next middleware
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;

@@ -10,7 +10,7 @@ import {
 import { app } from "../firebase.js";
 
 export default function Profile() {
-  const { currentUser } = useSelector((state) => state.user);
+  const { currentUser } = useSelector((state) => state.user); // used to get the 'user' from the rootReducer in store.js
   const fileRef = useRef(null);
   const [file, setFile] = useState(undefined);
   const [filePerc, setFilePerc] = useState(0);
